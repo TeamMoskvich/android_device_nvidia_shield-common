@@ -262,7 +262,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     wificond \
     android.hardware.wifi@1.0-service \
-    android.hardware.wifi.supplicant@1.0 \
     wifilogd
 
 # Unified scaling
