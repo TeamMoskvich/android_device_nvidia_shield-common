@@ -15,6 +15,7 @@ class shield_init {
 
         enum class boot_dev_type {
             EMMC,
+            SDCARD,
             SATA
         } typedef boot_dev_type;
 
@@ -39,6 +40,7 @@ class shield_init {
             dt_detect(dtdetect), parts(recdevs), shield_devices(devicelist), fp_version(buildversion)
             { chosen_device = NULL; }
         void set_properties();
+        void property_set(std::string key, std::string value);
 
     private:
         bool dt_detect;     // Use ro.hardware to detect model

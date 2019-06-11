@@ -81,15 +81,6 @@ on boot
 
 # set HW acceleration to true
     setprop skia.jpeg.hwaccelerate 1
-
-# Isochronous mode disable on xudc for T210 chip
-    setprop ro.xudc.isochronous.enable 0
-
-# Thie yields each tegra wdt expiration to be at 45 secs and fourth expiration for reboot at 180 secs.
-service watchdogd /sbin/watchdogd 20 160
-    class core
-    seclabel u:r:watchdogd:s0
-
 on property:sys.boot_completed=1
     # Disable uevents for Android USB state and VBUS extcon state while suspending.
     write /sys/devices/virtual/android_usb/android0/uevent_in_suspend N

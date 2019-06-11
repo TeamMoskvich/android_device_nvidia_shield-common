@@ -26,10 +26,12 @@ endif
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+	adbenable \
     init.comms.rc \
     init.dualwifi.rc \
     init.hdcp.rc \
     init.nv_dev_board.usb.rc \
+    init.xusb.configfs.rc \
     init.recovery.nv_dev_board.usb.rc \
     init.none.rc \
     init.tegra.rc \
@@ -87,6 +89,7 @@ endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:vendor/etc/wifi/wpa_supplicant_overlay.conf \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
@@ -125,10 +128,7 @@ PRODUCT_PACKAGES += \
     enctune.conf
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
-
+PRODUCT_PACKAGES += android.hardware.bluetooth@1.0-service.btlinux
 # Camera
 PRODUCT_PACKAGES += libEGL_vndk
 
@@ -136,12 +136,6 @@ PRODUCT_PACKAGES += libEGL_vndk
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
 
-# Gatekeeper HAL
-ifeq ($(TARGET_TEGRA_VERSION),t210)
-	PRODUCT_PACKAGES += \
-	    android.hardware.gatekeeper@1.0-impl \
-	    android.hardware.gatekeeper@1.0-service
-endif
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -261,18 +255,15 @@ endif
 
 # Wifi
 # All Shield devices currently use broadcom wifi / bluetooth modules
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
-
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    hostapd \
-    wificond \
     libwpa_client \
+    hostapd \
     wpa_supplicant \
-    wpa_supplicant.conf
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/comms/wifi_scan_config.conf:system/etc/wifi/wifi_scan_config.conf
+    wpa_supplicant.conf \
+    wificond \
+    android.hardware.wifi@1.0-service \
+    android.hardware.wifi.supplicant@1.0 \
+    wifilogd
 
 # Unified scaling
 ifneq ($(TARGET_TEGRA_VERSION),t114)

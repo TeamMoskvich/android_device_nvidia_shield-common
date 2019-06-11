@@ -129,6 +129,23 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.xusb.configfs.usb.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.xusb.configfs.usb.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := adbenable
+LOCAL_MODULE_SUFFIX := .sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES    := adbenable.sh
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.recovery.nv_dev_board.usb.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC

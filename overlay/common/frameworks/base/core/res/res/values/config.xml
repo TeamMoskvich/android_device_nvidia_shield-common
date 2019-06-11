@@ -244,7 +244,7 @@
 
     <!-- Default persistent data block package as GMS -->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
-
+	<bool name="config_showNavigationBar">true</bool>
      <!-- Whether the device should automatically switch away from Wi-Fi networks that lose
           Internet access. Actual device behaviour is controlled by
           Settings.Global.NETWORK_AVOID_BAD_WIFI. This is the default value of that setting. -->
