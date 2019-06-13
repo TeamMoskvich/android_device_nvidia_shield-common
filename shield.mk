@@ -26,9 +26,11 @@ endif
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    adbenable \
     init.comms.rc \
     init.dualwifi.rc \
     init.hdcp.rc \
+    init.xusb.configfs.rc \
     init.nv_dev_board.usb.rc \
     init.recovery.nv_dev_board.usb.rc \
     init.none.rc \
@@ -125,9 +127,7 @@ PRODUCT_PACKAGES += \
     enctune.conf
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
+PRODUCT_PACKAGES += android.hardware.bluetooth@1.0-service.btlinux
 
 # Camera
 PRODUCT_PACKAGES += libEGL_vndk
@@ -137,11 +137,11 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
 
 # Gatekeeper HAL
-ifeq ($(TARGET_TEGRA_VERSION),t210)
-	PRODUCT_PACKAGES += \
-	    android.hardware.gatekeeper@1.0-impl \
-	    android.hardware.gatekeeper@1.0-service
-endif
+#ifeq ($(TARGET_TEGRA_VERSION),t210)
+#	PRODUCT_PACKAGES += \
+#	    android.hardware.gatekeeper@1.0-impl \
+#	    android.hardware.gatekeeper@1.0-service
+#endif
 
 # Graphics
 PRODUCT_PACKAGES += \

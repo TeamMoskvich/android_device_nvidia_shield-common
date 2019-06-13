@@ -171,13 +171,18 @@ void shield_init::recovery_links()
     switch (chosen_device->boot_dev) {
         case boot_dev_type::EMMC:
             symlink("/etc/twrp.fstab.emmc", "/etc/twrp.fstab");
-	    int_path = "sdhci-tegra.3";
-	    break;
+	        int_path = "sdhci-tegra.3";
+	        break;
 
-	case boot_dev_type::SATA:
+        case boot_dev_type::SDCARD:
+            symlink("/etc/twrp.fstab.sdcard", "/etc/twrp.fstab");
+	        int_path = "sdhci-tegra.0";
+	        break;
+
+	    case boot_dev_type::SATA:
             symlink("/etc/twrp.fstab.sata", "/etc/twrp.fstab");
-	    int_path = "tegra-sata.0";
-	    break;
+	        int_path = "tegra-sata.0";
+	        break;
     }
 
     // Symlink paths for unified ROM installs.
@@ -230,3 +235,9 @@ void shield_init::set_properties()
     if (parts.size())
 	    recovery_links();
 }
+
+void shield_init::property_set(std::string key, std::string value)
+{
+    property_override(key.c_str(), value.c_str());
+}
+

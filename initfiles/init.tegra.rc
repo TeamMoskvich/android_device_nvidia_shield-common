@@ -6,7 +6,6 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.nv_dev_board.usb.rc
 import init.xusb.configfs.usb.rc
 import init.sata.configs.rc
 import init.${ro.boot.modem}.rc
