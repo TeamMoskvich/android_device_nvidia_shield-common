@@ -193,7 +193,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7210.kl:system/usr/keylayout/Vendor_0955_Product_7210.kl \
     $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7212.kl:system/usr/keylayout/Vendor_0955_Product_7212.kl \
     $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7213.kl:system/usr/keylayout/Vendor_0955_Product_7213.kl \
-    $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7214.kl:system/usr/keylayout/Vendor_0955_Product_7214.kl
+    $(LOCAL_PATH)/keylayout/Vendor_0955_Product_7214.kl:system/usr/keylayout/Vendor_0955_Product_7214.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_057e_Product_2009_Version_0001.kl:system/usr/keylayout/Vendor_057e_Product_2009_Version_0001.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_057e_Product_2007_Version_0001.kl:system/usr/keylayout/Vendor_057e_Product_2007_Version_0001.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_057e_Product_2006_Version_0001.kl:system/usr/keylayout/Vendor_057e_Product_2006_Version_0001.kl
 
 # Sony controller keylayouts
 PRODUCT_COPY_FILES += \
