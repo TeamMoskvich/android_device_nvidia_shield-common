@@ -230,9 +230,10 @@ ifeq ($(TARGET_TEGRA_VERSION),t210)
 endif
 
 # Power
+# # Power
+TARGET_POWERHAL_VARIANT := tegra
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    power.tegra
+    android.hardware.power@1.0-service-nvidia
 
 # Renderscript
 PRODUCT_PACKAGES += \
