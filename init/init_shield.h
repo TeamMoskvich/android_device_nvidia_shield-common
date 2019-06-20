@@ -23,6 +23,7 @@ class shield_init {
             std::string device;
             std::string name;
             std::string model;
+            std::string manufacturer;
             std::string dev_id; // Device ID used in board_info lookup
             gsm_support_type gsm_support;
             boot_dev_type boot_dev;

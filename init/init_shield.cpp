@@ -222,13 +222,16 @@ void shield_init::set_properties()
 
     property_override("ro.product.name",   chosen_device->name.c_str());
     property_override("ro.build.product",  chosen_device->device.c_str());
+    property_override("ro.lineage.device",  chosen_device->device.c_str());
     property_override("ro.product.device", chosen_device->device.c_str());
     property_override("ro.product.model",  chosen_device->model.c_str());
+    property_override("ro.product.manufacturer",  chosen_device->manufacturer.c_str());
 
     property_override("ro.vendor.product.name",   chosen_device->name.c_str());
     property_override("ro.vendor.build.product",  chosen_device->device.c_str());
     property_override("ro.vendor.product.device", chosen_device->device.c_str());
     property_override("ro.vendor.product.model",  chosen_device->model.c_str());
+    property_override("ro.vendor.product.manufacturer",  chosen_device->manufacturer.c_str());
 
     set_fingerprints();
 
