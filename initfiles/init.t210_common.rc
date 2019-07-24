@@ -27,6 +27,8 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boost_factor
     chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
     chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/pwm-fan/fan_profile
+    chown system system /sys/devices/57000000.gpu/devfreq/57000000.gpu/max_freq
     write /sys/devices/system/cpu/cpufreq/interactive/io_busy_threshold 50
 
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1020000
